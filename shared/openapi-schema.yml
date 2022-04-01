@@ -1,0 +1,37 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /breed/:
+    post:
+      operationId: createBreedsList
+      description: 'Return a list of images'
+      summary: 'Search a new breed with AI'
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: 
+              type: object
+              properties:
+                url:
+                  type: string
+              example:   # Sample object
+                url: "http://image.com/pet1"
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  breed_image:
+                    type: array
+                    items:
+                      type: string
+                example:
+                  breed_image: ["url1", "url2", "url3"]
+          description: ''
+      tags:
+        - breed
