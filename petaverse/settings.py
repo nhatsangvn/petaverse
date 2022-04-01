@@ -27,6 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['61.28.238.6.nip.io']
+#REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
 
 
 # Application definition
@@ -57,7 +58,9 @@ ROOT_URLCONF = 'petaverse.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'templates',   # <- here 
+        ], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
